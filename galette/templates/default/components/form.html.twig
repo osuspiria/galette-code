@@ -50,6 +50,9 @@
                         {% set propname = entry.propname %}
                         {% set value = null %}
                         {% set example = null %}
+                        {% set readonly = entry.readonly %}
+                        {% set disabled = entry.disabled %}
+                        {% set is_member_number = entry.field_id == 'num_adh' or entry.propname == 'number' %}
 
                         {% if entry.type == constant('Galette\\Entity\\FieldsConfig::TYPE_BOOL') %}
                             {% set template = "checkbox.html.twig" %}
@@ -131,6 +134,10 @@
                         {% if entry.field_id == 'activite_adh' %}
                             {% set value = member.isActive() %}
                         {% endif %}
+                        {% if is_member_number %}
+                            {% set readonly = true %}
+                            {% set disabled = true %}
+                        {% endif %}
 
                         {# If value has not been set, take the generic value #}
                         {% if not value and propname != 'password' %}
@@ -142,8 +149,8 @@
                                 id: entry.field_id,
                                 value: value,
                                 required: entry.required,
-                                readonly: entry.readonly,
-                                disabled: entry.disabled,
+                                readonly: readonly,
+                                disabled: disabled,
                                 label: entry.label,
                                 title: title,
                                 size: size,
@@ -152,6 +159,9 @@
                                 checked: checked ?? false,
                                 masschange: masschange ?? false
                         } %}
+                        {% if is_member_number %}
+                            <input type="hidden" name="{{ entry.field_id }}" value="{% if value is not same as null %}{{ value }}{% endif %}" />
+                        {% endif %}
                         </div>
                     {% endfor %}
                     </div>
