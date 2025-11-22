@@ -50,6 +50,7 @@
                         {% set propname = entry.propname %}
                         {% set value = null %}
                         {% set example = null %}
+                        {% set readonly = entry.readonly %}
 
                         {% if entry.type == constant('Galette\\Entity\\FieldsConfig::TYPE_BOOL') %}
                             {% set template = "checkbox.html.twig" %}
@@ -131,6 +132,9 @@
                         {% if entry.field_id == 'activite_adh' %}
                             {% set value = member.isActive() %}
                         {% endif %}
+                        {% if entry.field_id == 'num_adh' or entry.propname == 'number' %}
+                            {% set readonly = true %}
+                        {% endif %}
 
                         {# If value has not been set, take the generic value #}
                         {% if not value and propname != 'password' %}
@@ -142,7 +146,7 @@
                                 id: entry.field_id,
                                 value: value,
                                 required: entry.required,
-                                readonly: entry.readonly,
+                                readonly: readonly,
                                 disabled: entry.disabled,
                                 label: entry.label,
                                 title: title,
