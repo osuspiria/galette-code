@@ -1,0 +1,38 @@
+.map-container { height: 85vh; }
+
+#map {
+    min-height: 100%;
+}
+
+#possible_towns li {
+    margin-bottom: .5em;
+}
+
+.leaflet-control-legend a {
+    background-image: url(images/legend.png);
+    background-position: -2px -2px;
+}
+
+#map #legend {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    text-align: left;
+}
+
+.legend-container .legend-toggle {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: transparent;
+}
+
+.legend-collapsed .legend-toggle {
+    text-align: right;
+    background: white;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.2);
+    padding: 3px 8px 3px 3px;
+}

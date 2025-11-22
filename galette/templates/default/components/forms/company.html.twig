@@ -1,0 +1,50 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
+<div class="grouped fields">
+    <div class="field">
+{% if not member.isCompany() %}
+    {% set component_class = component_class ?? 'field' ~ ' nocompany' %}
+{% endif %}
+{% include "components/forms/text.html.twig" with {
+        name: entry.field_id,
+        id: entry.field_id,
+        value: member.company_name,
+        required: entry.required,
+        disabled: entry.disabled,
+        label: entry.label,
+        component_id: "company_field",
+        component_class: component_class ?? 'field'
+    }
+%}
+    </div>
+    <div class="field">
+{% include "components/forms/checkbox.html.twig" with {
+        name: "is_company",
+        id: "is_company",
+        value: "1",
+        label: _T("Is company?"),
+        title: _T("Is member a company?"),
+        tip: _T("Do you manage a non profit organization, or a company? If you do so, check the box, and then enter its name in the field that will appear."),
+        checked: member.isCompany(),
+    }
+%}
+    </div>
+</div>

@@ -1,0 +1,195 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <form action="{{ url_for('configureCoreFields') }}" method="post" id="config_fields_form" class="ui form">
+        <div id="sortable_categories" class="ui stackable pointing inverted menu">
+    {% for category in categories %}
+            {% set catname = _T(category.category) %}
+            {% set fs = category.id_field_category %}
+            <a href="#{{ fs }}" class="item" data-tab="{{ fs }}">
+                <input type="hidden" name="categories[]" id="category{{ loop.index }}" value="{{ category.id_field_category }}"/>
+                <i class="jsonly displaynone arrows alternate icon" aria-hidden="true"></i>
+                {{ catname }}
+            </a>
+    {% endfor %}
+        </div>
+    {% for category in categories %}
+        {% set fs = category.id_field_category %}
+        <div class="ui tab segment" data-tab="{{ fs }}">
+            {% include 'elements/edit_core_fields.html.twig' %}
+        </div>
+    {% endfor %}
+        <div class="ui basic center aligned segment">
+            <button type="submit" class="ui labeled icon primary button action">
+                <i class="save icon" aria-hidden="true"></i> {{ _T("Save") }}
+            </button>
+            {% include "components/forms/csrf.html.twig" %}
+        </div>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="module">
+        $(function() {
+            $('.pointing.menu .item').tab();
+        });
+
+        var _initSortable = function(){
+            var _categories = document.getElementById('sortable_categories');
+
+            var _nestedSortables = [].slice.call(document.querySelectorAll('.sortable-items'));
+            var _drag_on_tabs = null;
+
+            function changeTab() {
+                $('.pointing.menu .item').tab('change tab', this.dataset.tab);
+            }
+
+            for (var i = 0; i < _nestedSortables.length; i++) {
+                new Sortable(_nestedSortables[i], {
+                    group: 'nested',
+                    animation: 150,
+                    ghostClass: 'yellow',
+                    fallbackOnBody: true,
+                    swapThreshold: 0.65,
+                    onStart: function (evt) {
+                        const targets = document.querySelectorAll('#sortable_categories .item');
+                        for (let i = 0; i < targets.length; i++) {
+                            targets[i].addEventListener('dragenter', changeTab, false);
+                        }
+                    },
+                    onEnd: function (evt) {
+                        const targets = document.querySelectorAll('#sortable_categories .item');
+                        for (let i = 0; i < targets.length; i++) {
+                            targets[i].removeEventListener('dragenter', changeTab, false);
+                        }
+                    },
+                    onAdd: function (evt) {
+                        var _item = evt.item;
+                        var _category = _item.parentElement.dataset.category;
+                        _item.classList.add('yellow');
+                        _item.querySelectorAll('input[name$=category]')[0].setAttribute('value', _category);
+                    },
+                    onUpdate: function (evt) {
+                        var _item = evt.item;
+                        _item.classList.add('yellow');
+                    }
+                });
+            }
+
+            new Sortable(_categories, {
+                animation: 150,
+                onUpdate: function (evt) {
+                    var _item = evt.item;
+                    _item.classList.add('moved');
+                }
+            });
+        }
+
+        var _warnings = [];
+        var _checkCoherence = function(index, elt){
+            var _elt = $(elt);
+            var _disabled = _elt.find('.required input:disabled, .visible input:disabled');
+            if ( _disabled.length == 0 ) {
+                var _required = parseInt(_elt.find('.required input:checked').val());
+                var _visible = parseInt(_elt.find('.visible option:selected').val());
+
+                if ( _required === 1 && _visible === 0 ) {
+                    _elt.addClass('red colored');
+                    _elt.find('.required_cell, .visibility_cell').addClass('left red marked');
+                    _warnings[_warnings.length] = _elt;
+                }
+            }
+        }
+
+        var _bindForm = function(){
+            $('#config_fields_form').submit(function(){
+
+                _warnings = [];
+                $('.sortable-items tr').removeClass('red colored');
+                $('.required_cell, .visibility_cell').removeClass('left red marked');
+                $('.sortable-items tr').each(_checkCoherence);
+
+                if ( _warnings.length > 0 ) {
+                    document.getElementById('galette_body').scrollTo({top: 0});
+                    var _message = '{{ _T("Some warnings has been thrown:")|e("js") }}<ul>';
+                    $.each(_warnings, function(i,w){
+                        var _val = w[0].getElementsByClassName('fieldname')[0].textContent.trim();
+                        _message += '<li>' + _val + '</li>';
+                    });
+                    _message += '</ul>{{ _T("Please correct above warnings to continue.") }}';
+                    $('body')
+                        .toast({
+                            title: '{{ _T("Warning")|e("js") }}',
+                            displayTime: 0,
+                            closeIcon: true,
+                            position: 'top attached',
+                            message: _message,
+                            showIcon: 'exclamation triangle',
+                            class: 'warning'
+                        })
+                    ;
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }
+
+        $(function() {
+            _bindForm();
+            _initSortable();
+
+            /*$('#add_category').click(function() {
+                var _fieldsets = $('fieldset[id^=cat_]');
+                var _cat_iter = _fieldsets.length + 1;
+
+                var _fs = $(_fieldsets[0]).clone();
+                _fs.attr('id', 'cat_' + _cat_iter).children('ul').attr('id', 'sortable_' + _cat_iter);
+                _fs.find('li:not(.listing)').remove();
+
+                var _legend = _fs.children('legend');
+                var _a = _legend.children('a');
+
+                _legend.html('<input type="text" name="categories[]" id="category' + _cat_iter + '" value="New category #' + _cat_iter + '"/>');
+                _legend.prepend(_a);
+                _a.spinDown();
+
+                $('#members_tab').append(_fs);
+                _initSortable();
+                _bindCollapse();
+
+                $(this).attr('href', '#cat_' + _cat_iter);
+                //Getting
+                var _url = document.location.toString();
+                if (_url.match('#')) { // the URL contains an anchor
+                    var _url = _url.split('#')[0];
+                }
+                _url += '#cat_' + _cat_iter;
+
+                document.location = _url;
+                _legend.children(':input').focus();
+                return false;
+            });*/
+        });
+    </script>
+{% endblock %}

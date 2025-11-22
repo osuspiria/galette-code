@@ -1,0 +1,67 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
+{% if sign_in is defined and sign_in == true %}
+    {% import "macros.twig" as menus_macros %}
+
+    {% if ext_auth is not defined %}
+        {% set public_menus = callstatic('\\Galette\\Core\\Galette', 'getPublicMenus') %}
+        {% for public_menu in public_menus %}
+            {% for public_item in public_menu.items %}
+                {{ menus_macros.renderMenuItem(public_item.label, public_item.title ?? null, public_item.route, public_item.icon ?? null, null, tips_position, mode) }}
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    {% set public_items = [] %}
+    <div class="{% if sign_in_side is defined and sign_in_side is not empty %}right {% endif %}item">
+    {% if preferences.pref_bool_selfsubscribe == true and not is_current_url("subscribe") and ext_auth is not defined %}
+        {% set public_items = public_items|merge([{
+            'label': _T("Subscribe"),
+            'route': {'name': 'subscribe'},
+            'icon': 'add user',
+            'class': 'ui basic button'
+        }]) %}
+    {% endif %}
+    {% if not is_current_url("login") and ext_auth is not defined %}
+        {% set public_items = public_items|merge([{
+            'label': _T("Login"),
+            'route': {'name': 'slash'},
+            'icon': 'sign in alt',
+            'class': 'ui primary button'
+        }]) %}
+    {% endif %}
+
+    {% if ext_auth is not defined %}
+        {% for public_item in public_items %}
+            {{ menus_macros.renderMenuItem(public_item.label, public_item.title ?? null, public_item.route, public_item.icon, public_item.class, tips_position, mode) }}
+        {% endfor %}
+    {% endif %}
+        <a
+            href="#"
+            class="ui darkmode{% if login.isDarkModeEnabled() %} black{% endif %} icon button"
+            data-position="{{ tips_position }}"
+            title="{% if login.isDarkModeEnabled() %}{{ _T("Disable dark mode") }}{% else %}{{ _T("Enable dark mode") }}{% endif %}"
+        >
+            <i class="icon adjust" aria-hidden="true"></i>
+            <span>{% if login.isDarkModeEnabled() %}{{ _T("Disable dark mode") }}{% else %}{{ _T("Enable dark mode") }}{% endif %}</span>
+        </a>
+    </div>
+{% endif %}

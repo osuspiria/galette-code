@@ -1,0 +1,1093 @@
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020, 2022, 2023.
+# Tymofij Lytvynenko <till.svit@gmail.com>, 2021.
+# Tymofii Lytvynenko <till.svit@gmail.com>, 2021.
+# Ostap <ostapbataj79@gmail.com>, 2022.
+# Artem <artem@molotov.work>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-08 22:16+0100\n"
+"PO-Revision-Date: 2023-11-22 10:44+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/galette/"
+"objectslend-plugin/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.2\n"
+
+#. TRANS: this is a filename
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:58
+msgid "object_card"
+msgstr "картка_об'єкта"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:70
+msgid "Object card"
+msgstr "Картка об’єкта"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:72
+msgid "Labels"
+msgstr "Мітки"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:136
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:159
+#: ../lib/GaletteObjectsLend/Filters/ObjectsList.php:257
+#: ../tempcache/categories_list.html.twig:98
+#: ../tempcache/categories_list.html.twig:255
+#: ../tempcache/category_edit.html.twig:69
+#: ../tempcache/list_lent_object.html.twig:66
+#: ../tempcache/objects_list.html.twig:140
+#: ../tempcache/objects_list.html.twig:539
+msgid "Name"
+msgstr "Ім'я"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:138
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:160
+msgid "Description"
+msgstr "Опис"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:141
+#: ../tempcache/category_edit.html.twig:62
+msgid "Category"
+msgstr "Категорія"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:144
+#: ../lib/GaletteObjectsLend/Filters/ObjectsList.php:258
+msgid "Serial number"
+msgstr "Серійний номер"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:147
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:162
+#: ../tempcache/objects_list.html.twig:159
+#: ../tempcache/objects_list.html.twig:575
+msgid "Price"
+msgstr "Ціна"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:156
+msgid "Price per rental day"
+msgstr "Ціна за день оренди"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:162
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:164
+#: ../lib/GaletteObjectsLend/Filters/ObjectsList.php:263
+#: ../tempcache/objects_list.html.twig:181
+#: ../tempcache/objects_list.html.twig:619
+msgid "Dimensions"
+msgstr "Габарити"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:162
+#: ../tempcache/objects_edit.html.twig:141
+#: ../tempcache/take_object.html.twig:171
+msgid "Cm"
+msgstr "См"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:165
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:165
+#: ../tempcache/objects_list.html.twig:192
+#: ../tempcache/objects_list.html.twig:633
+msgid "Weight"
+msgstr "Вага"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:165
+#: ../tempcache/objects_edit.html.twig:147
+#: ../tempcache/take_object.html.twig:201
+msgid "Kg"
+msgstr "Кг"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:167
+#: ../tempcache/categories_list.html.twig:98
+#: ../tempcache/categories_list.html.twig:283
+#: ../tempcache/categories_list.html.twig:294
+#: ../tempcache/categories_list.html.twig:302
+#: ../tempcache/status_list.html.twig:98 ../tempcache/status_list.html.twig:322
+#: ../tempcache/status_list.html.twig:329
+#: ../tempcache/status_list.html.twig:333
+#: ../tempcache/objects_list.html.twig:219
+#: ../tempcache/objects_list.html.twig:709
+#: ../tempcache/objects_list.html.twig:732
+msgid "Active"
+msgstr "Діяльний"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:168
+msgid "Location"
+msgstr "Місцеперебування"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:169
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:167
+#: ../tempcache/objects_list.html.twig:200
+#: ../tempcache/objects_list.html.twig:666
+msgid "Since"
+msgstr "З"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:170
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:196
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:168
+msgid "Member"
+msgstr "Член"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:172
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:169
+#: ../tempcache/list_lent_object.html.twig:66
+#: ../tempcache/objects_list.html.twig:208
+#: ../tempcache/objects_list.html.twig:698
+msgid "Return"
+msgstr "Повернути"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:190
+msgid "History of object loans"
+msgstr "Історія позик об'єктів"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:192
+msgid "Begin"
+msgstr "Початок"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:193
+msgid "End"
+msgstr "Кінець"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:194
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:166
+#: ../tempcache/status_edit.html.twig:62
+#: ../tempcache/objects_edit.html.twig:360
+#: ../tempcache/list_lent_object.html.twig:66
+#: ../tempcache/status_list.html.twig:98 ../tempcache/status_list.html.twig:313
+#: ../tempcache/objects_list.html.twig:200
+#: ../tempcache/objects_list.html.twig:644
+msgid "Status"
+msgstr "Стан"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:195
+#: ../tempcache/objects_edit.html.twig:342
+#: ../tempcache/list_lent_object.html.twig:119
+#: ../tempcache/status_list.html.twig:358
+#: ../tempcache/status_list.html.twig:362
+#: ../tempcache/objects_list.html.twig:654
+msgid "In stock"
+msgstr "В наявності"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObject.php:197
+#: ../tempcache/objects_edit.html.twig:365
+#: ../tempcache/list_lent_object.html.twig:66
+msgid "Comments"
+msgstr "Коментарі"
+
+#. TRANS: this is a filename
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:70
+#, fuzzy
+#| msgid "object_card"
+msgid "objects_cards"
+msgstr "картка_об'єкта"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:87
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:89
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:107
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:145
+#: ../lib/GaletteObjectsLend/PluginGaletteObjectslend.php:52
+msgid "Objects list"
+msgstr "Список об'єктів"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:116
+#, php-format
+msgid "Printed on %date"
+msgstr "Надруковано %date"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:161
+#: ../tempcache/objects_list.html.twig:148
+#: ../tempcache/objects_list.html.twig:561
+msgid "Serial"
+msgstr "Серійний номер"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:163
+#: ../tempcache/objects_list.html.twig:170
+#: ../tempcache/objects_list.html.twig:589
+msgid "Borrow price"
+msgstr "Ціна позики"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:197
+#, php-format
+msgid "Category: %category"
+msgstr "Категорія: %category"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:239
+msgid "Total:"
+msgstr "Всього:"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:246
+msgid "Borrowed"
+msgstr "Позичено"
+
+#: ../lib/GaletteObjectsLend/IO/PdfObjects.php:248
+msgid "Available"
+msgstr "Доступно"
+
+#: ../lib/GaletteObjectsLend/Entity/LendStatus.php:144
+msgid "Status has not been added :("
+msgstr "Стан не додано :("
+
+#: ../lib/GaletteObjectsLend/Entity/LendObject.php:349
+msgid "Object has not been added :("
+msgstr "Об'єкт не додано :("
+
+#: ../lib/GaletteObjectsLend/Entity/LendCategory.php:238
+#: ../tempcache/categories_list.html.twig:369
+msgid "No category"
+msgstr "Немає категорії"
+
+#: ../lib/GaletteObjectsLend/Entity/Preferences.php:264
+msgid "Unable to store preferences :("
+msgstr "Не вдалося зберегти налаштування :("
+
+#: ../lib/GaletteObjectsLend/Entity/LendRent.php:177
+msgid "Rent has not been added"
+msgstr "Оренда не додана"
+
+#: ../lib/GaletteObjectsLend/Entity/LendRent.php:342
+msgid "Y-m-d H:i"
+msgstr "Y-m-d H:i"
+
+#: ../lib/GaletteObjectsLend/Controllers/MainController.php:65
+msgid "ObjectsLend preferences"
+msgstr "Налаштування ObjectsLend"
+
+#: ../lib/GaletteObjectsLend/Controllers/MainController.php:97
+msgid "Preferences have been successfully stored!"
+msgstr "Налаштування успішно збережено!"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:113
+msgid "Please add at last one status \"in stock\"!"
+msgstr "Будь ласка, додайте хоча б один стан \"в наявності\"!"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:119
+msgid "Please add at least one status \"object borrowed\"!"
+msgstr "Будь ласка, додайте хоча б один статус \"об'єкт позичено\"!"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:134
+msgid "Status list"
+msgstr "Список станів"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:225
+#, php-format
+msgid "Edit status %status"
+msgstr "Редагувати стан %status"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:228
+msgid "New status"
+msgstr "Новий стан"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:268
+msgid "An error occurred while storing the status."
+msgstr "Під час зберігання стану сталася помилка."
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:294
+msgid "Status has been saved"
+msgstr "Стан збережено"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/StatusController.php:347
+#, php-format
+msgid "Remove status %1$s"
+msgstr "Вилучити стан %1$s"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:122
+msgid "Categories list"
+msgstr "Список категорій"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:203
+msgid "Edit category"
+msgstr "Редагувати категорію"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:205
+msgid "New category"
+msgstr "Нова категорія"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:269
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:440
+msgid "Delete failed"
+msgstr "Не вдалося видалити"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:277
+msgid "An error occurred while storing the category."
+msgstr "Під час зберігання категорії сталася помилка."
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:300
+msgid "Category has been saved"
+msgstr "Категорію збережено"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/CategoriesController.php:353
+#, php-format
+msgid "Remove category %1$s"
+msgstr "Вилучити категорію %1$s"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:232
+#, php-format
+msgid "Rents list for %object"
+msgstr "Список орендаторів %object"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:322
+#: ../tempcache/objects_list.html.twig:747
+msgid "Edit object"
+msgstr "Редагувати об'єкт"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:324
+msgid "New object"
+msgstr "Новий об'єкт"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:448
+msgid "Something went wrong saving object :("
+msgstr "Під час збереження об’єкта щось пішло не так :("
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:474
+msgid "Object has been saved"
+msgstr "Об'єкт збережено"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:515
+#, fuzzy
+#| msgid "Status has been saved"
+msgid "Status has been updated"
+msgstr "Стан збережено"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:545
+msgid "Successfully cloned from #%id.<br/>You can now edit it."
+msgstr "Успішно клоновано з #%id.<br>Тепер можна редагувати."
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:551
+msgid "An error occurred cloning object :("
+msgstr "Під час клонування об'єкта сталася помилка :("
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:582
+msgid "Borrow an object"
+msgstr "Позичити об'єкт"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:583
+msgid "Return a borrowed object"
+msgstr "Повернути позичений об'єкт"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:628
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:744
+#, fuzzy
+#| msgid "You do not have rights to take objects!"
+msgid "You do not have rights to borrow objects!"
+msgstr "Ви не маєте прав брати об'єкти!"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:665
+#, php-format
+msgid "%object is currently not available"
+msgstr "Об'єкт %object зараз недоступний"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:694
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:914
+#, fuzzy
+#| msgid "You do not have rights to take objects!"
+msgid "You do not have rights to return objects!"
+msgstr "Ви не маєте прав брати об'єкти!"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:849
+#, php-format
+msgid "You have just borrowed %object :)"
+msgstr "Ви щойно позичили %object :)"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:939
+#, php-format
+msgid "%object has been returned :)"
+msgstr "%object повернено :)"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:1026
+#, php-format
+msgid "Remove object %1$s"
+msgstr "Вилучити об'єкт %1$s"
+
+#: ../lib/GaletteObjectsLend/Controllers/Crud/ObjectsController.php:1035
+#, php-format
+msgid "You are about to remove %count objects."
+msgstr "Ви ось-ось видалите %count об'єктів."
+
+#: ../lib/GaletteObjectsLend/PluginGaletteObjectslend.php:48
+msgid "Objects lend"
+msgstr "Objects lend"
+
+#: ../lib/GaletteObjectsLend/PluginGaletteObjectslend.php:71
+msgid "Borrow status"
+msgstr "Стан позики"
+
+#: ../lib/GaletteObjectsLend/PluginGaletteObjectslend.php:78
+msgid "Object categories"
+msgstr "Категорії об'єктів"
+
+#: ../lib/GaletteObjectsLend/PluginGaletteObjectslend.php:85
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: ../lib/GaletteObjectsLend/Filters/ObjectsList.php:257
+msgid "Name/description"
+msgstr "Назва/опис"
+
+#: ../lib/GaletteObjectsLend/Filters/ObjectsList.php:259
+#: ../tempcache/list_lent_object.html.twig:66
+msgid "Id"
+msgstr "ID"
+
+#: ../tempcache/status_edit.html.twig:69 ../tempcache/take_object.html.twig:372
+#: ../tempcache/take_object.html.twig:435
+msgid "Status:"
+msgstr "Стан:"
+
+#: ../tempcache/status_edit.html.twig:74 ../tempcache/status_list.html.twig:189
+msgid "In stock:"
+msgstr "В наявності:"
+
+#: ../tempcache/status_edit.html.twig:74
+msgid "Is object in stock or borrowed"
+msgstr "Є об'єктом на складі або позиченим"
+
+#: ../tempcache/status_edit.html.twig:75
+msgid ""
+"Check if the object is available to be borrowed;<br/>uncheck if object is "
+"already borrowed and should be given back"
+msgstr ""
+"Перевірте, чи доступний об'єкт для позичення;<br>зніміть прапорець, якщо "
+"об'єкт вже позичений і повинен бути повернений."
+
+#: ../tempcache/status_edit.html.twig:80
+#: ../tempcache/categories_list.html.twig:131
+#: ../tempcache/objects_edit.html.twig:152
+#: ../tempcache/status_list.html.twig:133
+#: ../tempcache/objects_list.html.twig:286
+msgid "Active:"
+msgstr "Діяльний:"
+
+#: ../tempcache/status_edit.html.twig:87 ../tempcache/status_list.html.twig:98
+#: ../tempcache/status_list.html.twig:380
+msgid "Days for rent"
+msgstr "Дні оренди"
+
+#: ../tempcache/status_edit.html.twig:87
+msgid "Number of days to rent per default"
+msgstr "Типова кількість днів оренди"
+
+#: ../tempcache/status_edit.html.twig:87
+msgid "used to compute return date"
+msgstr "використовується для обчислення дати повернення"
+
+#: ../tempcache/categories_list.html.twig:62
+#, php-format
+msgid "%count category"
+msgid_plural "%count categories"
+msgstr[0] "%count категорія"
+msgstr[1] "%count категорії"
+msgstr[2] "%count категорій"
+
+#: ../tempcache/categories_list.html.twig:86
+msgid "Add a category"
+msgstr "Додати категорію"
+
+#: ../tempcache/categories_list.html.twig:296
+#: ../tempcache/categories_list.html.twig:304
+#: ../tempcache/status_list.html.twig:339
+#: ../tempcache/status_list.html.twig:343
+#: ../tempcache/objects_list.html.twig:734
+msgid "Inactive"
+msgstr "Незадіяний"
+
+#: ../tempcache/categories_list.html.twig:315
+#, php-format
+msgid "Edit \"%category\""
+msgstr "Редагувати \"%category\""
+
+#: ../tempcache/categories_list.html.twig:325
+#, php-format
+msgid "Remove \"%category\""
+msgstr "Вилучити \"%category\""
+
+#: ../tempcache/preferences.html.twig:57
+msgid "Plugin preferences"
+msgstr "Налаштування розширення"
+
+#: ../tempcache/preferences.html.twig:61
+msgid "Images related"
+msgstr "Пов'язані зображення"
+
+#: ../tempcache/preferences.html.twig:65
+msgid "Display preferences"
+msgstr "Налаштування відображення"
+
+#: ../tempcache/preferences.html.twig:74
+msgid "Members can borrow:"
+msgstr "Члени можуть позичити:"
+
+#: ../tempcache/preferences.html.twig:74
+msgid ""
+"Allow a member (not staff neither admin) to borrow an object. If set to "
+"'No', only admin and staff members can access the 'Take object' page"
+msgstr ""
+"Дозволити користувачеві (не співробітники й не адміністратору) брати об'єкт. "
+"Якщо встановлено значення \"Ні\", тільки адміністратори та співробітники "
+"можуть отримати доступ до сторінки \"Взяти об'єкт\""
+
+#: ../tempcache/preferences.html.twig:76
+msgid "Generate contribution:"
+msgstr "Утворити внесок:"
+
+#: ../tempcache/preferences.html.twig:76
+msgid ""
+"Automatically generate a contribution for the member of the amount of the "
+"rental price of the object"
+msgstr "Самоутворення внеску для члена в розмірі вартості оренди об'єкта"
+
+#: ../tempcache/preferences.html.twig:105
+msgid "Choose a contribution type"
+msgstr "Виберіть тип внеску"
+
+#: ../tempcache/preferences.html.twig:127
+msgid "Contribution type:"
+msgstr "Тип внеску:"
+
+#: ../tempcache/preferences.html.twig:134
+msgid "Contribution text:"
+msgstr "Текст внеску:"
+
+#: ../tempcache/preferences.html.twig:134
+msgid "Comment text to add on generated contribution"
+msgstr "Текст коментаря, який потрібно додати до створеного внеску"
+
+#: ../tempcache/preferences.html.twig:134
+msgid ""
+"Comment text to add on generated contribution. Automatically replaced values "
+"(put into curly brackets): <br/>- NAME: Name<br/>- DESCRIPTION: "
+"Description<br/>- SERIAL_NUMBER: Serial number<br/>- PRICE: Price<br/>- "
+"RENT_PRICE: Borrow price<br/>- WEIGHT: Weight<br/>- DIMENSION: Dimensions"
+msgstr ""
+"Текст коментаря для додавання до утвореного внеску. Автоматично замінювані "
+"значення (внесені у фігурні дужки): <br>- NAME: Назва<br>- DESCRIPTION: "
+"Опис<br>- SERIAL_NUMBER: Серійний номер<br>- PRICE: Ціна<br>- RENT_PRICE: "
+"Ціна позики<br>- WEIGHT: Вага<br>- DIMENSION: Габарити"
+
+#: ../tempcache/preferences.html.twig:148
+msgid "Max thumb height (in px)"
+msgstr "Максимальна висота ескізу (в пікселях)"
+
+#: ../tempcache/preferences.html.twig:154
+msgid "Max thumb width (in px)"
+msgstr "Максимальна ширина ескізу (в пікселях)"
+
+#: ../tempcache/preferences.html.twig:159
+msgid "Images in lists:"
+msgstr "Зображення у списках:"
+
+#: ../tempcache/preferences.html.twig:159
+msgid "Display images in objects and categories lists"
+msgstr "Показ зображень у списках об’єктів та категорій"
+
+#: ../tempcache/preferences.html.twig:161
+msgid "Enable fullsize:"
+msgstr "Увімкнути повний розмір:"
+
+#: ../tempcache/preferences.html.twig:161
+msgid "Show fullsize image or just thumbs"
+msgstr "Показувати повнорозмірне чи ескізне зображення"
+
+#: ../tempcache/preferences.html.twig:161
+msgid ""
+"Will permit to see fullsize image clicking on thumbnails.<br/>If disabled, "
+"only thumbnails will be displayed, but full images are still kept."
+msgstr ""
+"Дозволяє переглядати повнорозмірні зображення за натискання на ескіз. <br> "
+"Якщо вимкнено, показуватимуться лише ескізи, але повні зображення будуть "
+"зберігатися."
+
+#: ../tempcache/preferences.html.twig:196
+msgid "View category:"
+msgstr "Показ категорії:"
+
+#: ../tempcache/preferences.html.twig:198
+msgid "View forecast return date:"
+msgstr "Показ приблизної дати повернення:"
+
+#: ../tempcache/preferences.html.twig:200
+msgid "View description"
+msgstr "Показ опису:"
+
+#: ../tempcache/preferences.html.twig:202
+msgid "View dimensions:"
+msgstr "Показ габаритів:"
+
+#: ../tempcache/preferences.html.twig:204
+msgid "View borrow price:"
+msgstr "Показ ціни позики:"
+
+#: ../tempcache/preferences.html.twig:206
+msgid "View price sum:"
+msgstr "Показ суми ціни:"
+
+#: ../tempcache/preferences.html.twig:206
+msgid "View the objects buy price sum on the list under the category"
+msgstr "Показ суми цін на покупку об’єктів у списку під категорією"
+
+#: ../tempcache/preferences.html.twig:208
+msgid "View buy price:"
+msgstr "Показ ціни придбання:"
+
+#: ../tempcache/preferences.html.twig:210
+msgid "View serial number:"
+msgstr "Показ серійного номера:"
+
+#: ../tempcache/preferences.html.twig:212
+msgid "View weight"
+msgstr "Показ ваги"
+
+#: ../tempcache/objects_edit.html.twig:63 ../tempcache/take_object.html.twig:63
+msgid "Object"
+msgstr "Об'єкт"
+
+#: ../tempcache/objects_edit.html.twig:70 ../tempcache/take_object.html.twig:70
+msgid "Name:"
+msgstr "Ім'я:"
+
+#: ../tempcache/objects_edit.html.twig:76
+#: ../tempcache/take_object.html.twig:106
+msgid "Description:"
+msgstr "Опис:"
+
+#: ../tempcache/objects_edit.html.twig:84
+msgid "--- Select a category ---"
+msgstr "--- Виберіть категорію ---"
+
+#: ../tempcache/objects_edit.html.twig:105
+msgid "Category:"
+msgstr "Категорія:"
+
+#: ../tempcache/objects_edit.html.twig:115
+#: ../tempcache/take_object.html.twig:124
+msgid "Serial number:"
+msgstr "Серійний номер:"
+
+#: ../tempcache/objects_edit.html.twig:121
+#: ../tempcache/take_object.html.twig:142
+msgid "Price:"
+msgstr "Ціна:"
+
+#: ../tempcache/objects_edit.html.twig:128
+#: ../tempcache/take_object.html.twig:218
+msgid "Borrow price:"
+msgstr "Ціна позики:"
+
+#: ../tempcache/objects_edit.html.twig:134
+msgid "Price per rental day:"
+msgstr "Ціна за день оренди:"
+
+#: ../tempcache/objects_edit.html.twig:134
+msgid "The price applies on each rental day if checked, only once otherwise"
+msgstr ""
+"Ціна застосовується в кожен день оренди, якщо зазначено, в іншому випадку "
+"тільки один раз"
+
+#: ../tempcache/objects_edit.html.twig:141
+#: ../tempcache/take_object.html.twig:162
+msgid "Dimensions:"
+msgstr "Габарити:"
+
+#: ../tempcache/objects_edit.html.twig:147
+#: ../tempcache/take_object.html.twig:192
+msgid "Weight:"
+msgstr "Вага:"
+
+#: ../tempcache/objects_edit.html.twig:162
+#: ../tempcache/objects_edit.html.twig:328
+#: ../tempcache/take_object.html.twig:340
+#: ../tempcache/take_object.html.twig:415
+msgid "--- Select a status ---"
+msgstr "--- Виберіть стан ---"
+
+#: ../tempcache/objects_edit.html.twig:182
+msgid "Where is the object?"
+msgstr "Де знаходиться об'єкт?"
+
+#: ../tempcache/objects_edit.html.twig:195
+#: ../tempcache/objects_edit.html.twig:219
+msgid "Object's photo"
+msgstr "Світлина об'єкта"
+
+#: ../tempcache/objects_edit.html.twig:265
+msgid "Duplicate"
+msgstr "Подвоїти"
+
+#: ../tempcache/objects_edit.html.twig:274
+msgid "Print object"
+msgstr "Друк об'єкта"
+
+#: ../tempcache/objects_edit.html.twig:299
+msgid "History"
+msgstr "Історія"
+
+#: ../tempcache/objects_edit.html.twig:322
+#: ../tempcache/objects_edit.html.twig:416
+msgid "Change status"
+msgstr "Змінити стан"
+
+#: ../tempcache/category_edit.html.twig:74
+msgid "Is active"
+msgstr "Діє"
+
+#: ../tempcache/category_edit.html.twig:81
+msgid "Picture:"
+msgstr "Зображення:"
+
+#: ../tempcache/category_edit.html.twig:103
+msgid "Category photo"
+msgstr "Світлина категорії"
+
+#: ../tempcache/list_lent_object.html.twig:66
+msgid "Begin date"
+msgstr "Дата початку"
+
+#: ../tempcache/list_lent_object.html.twig:66
+msgid "End date"
+msgstr "Дата завершення"
+
+#: ../tempcache/list_lent_object.html.twig:164
+msgid "No lend found"
+msgstr "Позику не знайдено"
+
+#: ../tempcache/status_list.html.twig:86
+msgid "Add a status"
+msgstr "Додати стан"
+
+#: ../tempcache/status_list.html.twig:98 ../tempcache/status_list.html.twig:351
+msgid "Stock"
+msgstr "В наявності"
+
+#: ../tempcache/status_list.html.twig:368
+#: ../tempcache/status_list.html.twig:372
+msgid "Not in stock"
+msgstr "Немає в наявності"
+
+#: ../tempcache/status_list.html.twig:387
+#: ../tempcache/take_object.html.twig:354
+#, php-format
+msgid "%days days"
+msgstr "%days днів"
+
+#: ../tempcache/status_list.html.twig:400
+#, php-format
+msgid "Edit %status"
+msgstr "Редагувати %status"
+
+#: ../tempcache/status_list.html.twig:402
+#, php-format
+msgid "Remove %status from database"
+msgstr "Вилучити стан %status з бази даних"
+
+#: ../tempcache/status_list.html.twig:438
+msgid "No status has been found"
+msgstr "Стан не знайдено"
+
+#: ../tempcache/headers.html.twig:43
+msgid "Click to view fullsize image"
+msgstr "Клацніть, щоб переглянути повне зображення"
+
+#: ../tempcache/objects_list.html.twig:57
+msgid "No object selected"
+msgstr "Не вибрано жодного об’єкта"
+
+#: ../tempcache/objects_list.html.twig:57
+msgid ""
+"Please make sure to select at least one object from the list to perform this "
+"action."
+msgstr ""
+"Для виконання цієї дії обов'язково виберіть хоча б один об'єкт зі списку."
+
+#: ../tempcache/objects_list.html.twig:59
+msgid "Print objects list"
+msgstr "Друк списку об'єктів"
+
+#: ../tempcache/objects_list.html.twig:100
+msgid "Add an object"
+msgstr "Додати об’єкт"
+
+#: ../tempcache/objects_list.html.twig:200
+#: ../tempcache/objects_list.html.twig:675
+msgid "By"
+msgstr "Автор"
+
+#: ../tempcache/objects_list.html.twig:378
+msgid "Categories"
+msgstr "Категорії"
+
+#: ../tempcache/objects_list.html.twig:532
+#: ../tempcache/take_object.html.twig:95
+msgid "Object photo"
+msgstr "Світлина об'єкта"
+
+#: ../tempcache/objects_list.html.twig:600
+#: ../tempcache/take_object.html.twig:250
+msgid "(per day)"
+msgstr "(на добу)"
+
+#: ../tempcache/objects_list.html.twig:606
+#: ../tempcache/take_object.html.twig:256
+msgid "(at once)"
+msgstr "(одразу)"
+
+#: ../tempcache/objects_list.html.twig:723
+msgid "Object is active"
+msgstr "Об'єкт діяльний"
+
+#: ../tempcache/objects_list.html.twig:725
+msgid "Object is inactive"
+msgstr "Об'єкт бездіяльний"
+
+#: ../tempcache/objects_list.html.twig:748
+msgid "Duplicate object"
+msgstr "Подвоїти об'єкт"
+
+#: ../tempcache/objects_list.html.twig:749
+msgid "Show object lends"
+msgstr "Показати позичання об'єкта"
+
+#: ../tempcache/objects_list.html.twig:750
+msgid "Object card in PDF"
+msgstr "Картка об’єкта в PDF"
+
+#: ../tempcache/objects_list.html.twig:751
+#, php-format
+msgid "Remove %object from database"
+msgstr "Вилучити %object із бази даних"
+
+#: ../tempcache/objects_list.html.twig:767
+msgid "Take away"
+msgstr "Забрати"
+
+#: ../tempcache/objects_list.html.twig:778
+msgid "Give back"
+msgstr "Повернути назад"
+
+#: ../tempcache/objects_list.html.twig:821
+msgid "No object has been found"
+msgstr "Об'єкт не знайдено"
+
+#: ../tempcache/objects_list.html.twig:862
+msgid "History of object"
+msgstr "Історія об'єкта"
+
+#: ../tempcache/objects_list.html.twig:868
+msgid "An error occurred loading history display :("
+msgstr "Під час завантаження відображення історії сталася помилки :("
+
+#: ../tempcache/objects_list.html.twig:904
+msgid "Take objects"
+msgstr "Взяти об'єкти"
+
+#: ../tempcache/objects_list.html.twig:921
+msgid "An error occurred loading 'Take away' display :("
+msgstr "Під час завантаження відображення \"Забрати\" сталася помилка :("
+
+#: ../tempcache/objects_list.html.twig:951
+msgid "Give back objects"
+msgstr "Повернути назад об'єкти"
+
+#: ../tempcache/objects_list.html.twig:968
+msgid "An error occurred loading 'Give back' display :("
+msgstr ""
+"Під час завантаження відображення \"Повернути назад\" сталася помилка :("
+
+#: ../tempcache/take_object.html.twig:275
+msgid "Borrow information"
+msgstr "Відомості про позику"
+
+#: ../tempcache/take_object.html.twig:286
+msgid "Member:"
+msgstr "Член:"
+
+#: ../tempcache/take_object.html.twig:380
+msgid "Expected return:"
+msgstr "Очікуване повернення:"
+
+#: ../tempcache/take_object.html.twig:408
+msgid "Return information"
+msgstr "Відомості про повернення"
+
+#: ../tempcache/take_object.html.twig:442
+msgid "Time:"
+msgstr "Час:"
+
+#: ../tempcache/take_object.html.twig:446
+#, php-format
+msgid "From %begindate to %enddate"
+msgstr "З %begindate до %enddate"
+
+#: ../tempcache/take_object.html.twig:452
+msgid "Comments:"
+msgstr "Коментарі:"
+
+#: ../tempcache/take_object.html.twig:455
+msgid "remaining characters"
+msgstr "інші символи"
+
+#: ../tempcache/take_object.html.twig:473
+msgid "I have read and I agree with terms and conditions"
+msgstr "Я прочитав і погоджуюсь з умовами"
+
+#: ../tempcache/take_object.html.twig:480
+msgid "Show terms and conditions"
+msgstr "Показати терміни та умови використання"
+
+#: ../tempcache/take_object.html.twig:487
+msgid ""
+"The items offered for rent are in good condition and verification rental "
+"contradictory to their status is at the time of withdrawal. No claims will "
+"be accepted after the release of the object. Writing by the store a list of "
+"reservation does not exempt the customer checking his retrait. The payment "
+"of rent entitles the purchaser to make normal use of the loaned object. If "
+"the object is rendered in a degraded state, the seller reserves the right to "
+"collect all or part of the security deposit. In case of deterioration of the "
+"rented beyond the standard object, a financial contribution will be required "
+"for additional cleaning caused. In case of damage, loss or theft of the "
+"rented property, the deposit will not be refunded automatically to 'the "
+"company as damages pursuant to Article 1152 of the Civil Code and without "
+"that it need for any other judicial or extra-judicial formality. In some "
+"other cases not listed above and at the discretion of the seller, the "
+"deposit check may also be collected in whole or party."
+msgstr ""
+"Об'єкти, що пропонуються в оренду, знаходяться в хорошому стані, і перевірка "
+"оренди, що суперечить їх станом, проводиться на мить отримання. Після "
+"отримання об'єкта претензії не приймаються. Написання магазином списку "
+"бронювання не звільняє покупця від перевірки його отримання. Оплата оренди "
+"дає право покупцеві на нормальне використання взятого у тимчасове "
+"користування об'єкта. У разі надання об'єкта в погіршеному стані продавець "
+"залишає за собою право стягнути весь або частину застави. У разі погіршення "
+"стану орендованого об'єкта понад стандартного, потрібен фінансовий внесок за "
+"додаткове очищення тощо.\n"
+"Згідно зі статтею 590 Цивільного кодексу України:\n"
+"\"1. Заставоутримувач набуває право звернення стягнення на предмет застави в "
+"разі, коли зобов'язання не буде виконано у встановлений строк (термін), якщо "
+"інше не встановлено договором або законом.\n"
+"2. Заставоутримувач набуває право звернення стягнення на предмет застави в "
+"разі, коли зобов'язання не буде виконано у встановлений строк (термін), якщо "
+"інше не встановлено договором або законом.\"."
+
+#: ../tempcache/take_object.html.twig:501
+msgid "Borrow object"
+msgstr "Позичити об'єкт"
+
+#: ../tempcache/take_object.html.twig:503
+msgid "Return object"
+msgstr "Повернути об'єкт"
+
+#: ../tempcache/take_object.html.twig:558
+#, fuzzy
+#| msgid "You must agree with terms and conditions in order to take."
+msgid "You must agree with terms and conditions in order to borrow."
+msgstr "Ви повинні погодитися з умовами для того, щоб узяти."
+
+#~ msgid "Edit the object"
+#~ msgstr "Редагувати цей об'єкт"
+
+#~ msgid "Object has been successfully stored!"
+#~ msgstr "Об'єкт успішно збережено!"
+
+#~ msgid "categories"
+#~ msgstr "категорії"
+
+#~ msgid "category"
+#~ msgstr "категорія"
+
+#~ msgid "Backup categories pictures"
+#~ msgstr "Резервне копіювання зображень категорій"
+
+#~ msgid "Backup objects pictures"
+#~ msgstr "Резервне копіювання зображень об'єктів"
+
+#~ msgid "Restore objects pictures from database"
+#~ msgstr "Відновлення зображень об'єктів із бази даних"
+
+#~ msgid "Restore categories pictures from database"
+#~ msgstr "Відновлення зображень категорій із бази даних"
+
+#~ msgid "in stock"
+#~ msgstr "в наявності"
+
+#~ msgid "Delete image"
+#~ msgstr "Видалити зображення"
+
+#~ msgid "Back to list"
+#~ msgstr "Повернутися до списку"
+
+#~ msgid "No member"
+#~ msgstr "Немає члена"
+
+#~ msgid "objects"
+#~ msgstr "об'єктів"
+
+#~ msgid "object"
+#~ msgstr "об'єкт"
+
+#~ msgid "Take object away"
+#~ msgstr "Забрати об'єкт"
+
+#~ msgid "Give object back"
+#~ msgstr "Повернути об'єкт назад"
+
+#~ msgid "status"
+#~ msgstr "стан"
+
+#~ msgid "Objects"
+#~ msgstr "Об'єкти"
+
+#~ msgid "Picture"
+#~ msgstr "Зображення"
+
+#~ msgid "--- Select a member ---"
+#~ msgstr "--- Виберіть члена ---"
+
+#~ msgid "Payment type:"
+#~ msgstr "Вид оплати:"
+
+#~ msgid "--- Select a payment type ---"
+#~ msgstr "--- Виберіть тип платежу ---"
+
+#~ msgid "Take out"
+#~ msgstr "Вийняти"
+
+#~ msgid "Pictures administration"
+#~ msgstr "Управління зображеннями"
+
+#~ msgid "Unable to create backup directory `%dir`"
+#~ msgstr "Не вдається створити каталог резервних копій `%dir`"
+
+#~ msgid "File already exists."
+#~ msgstr "Файл уже існує."
+
+#~ msgid "Zip archive inconsistent."
+#~ msgstr "Zip-архів несумісний."
+
+#~ msgid "Invalid argument."
+#~ msgstr "Неприпустимий аргумент."
+
+#~ msgid "Memory allocation failure."
+#~ msgstr "Помилка виділення пам'яті."
+
+#~ msgid "No such file."
+#~ msgstr "Такого файлу немає."
+
+#~ msgid "Not a zip archive."
+#~ msgstr "Не zip-архів."
+
+#~ msgid "Can't open file."
+#~ msgstr "Не вдається відкрити файл."
+
+#~ msgid "Read error."
+#~ msgstr "Помилка читання."
+
+#~ msgid "Seek error."
+#~ msgstr "Помилка пошуку."
+
+#~ msgid "Unknown error."
+#~ msgstr "Невідома помилка."
+
+#~ msgid "File %filename does not exists"
+#~ msgstr "Файлу %filename не існує"
+
+#~ msgid "objects_list"
+#~ msgstr "objects_list"

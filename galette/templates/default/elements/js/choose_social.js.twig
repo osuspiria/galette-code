@@ -1,0 +1,60 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
+var _dropdownSocials = function() {
+    $('.socials-dropdown').dropdown({
+        allowAdditions: true,
+        onNoResults: function(searchValue) {
+            $(this).dropdown('set value', searchValue);
+        }
+    });
+}
+
+var _rmSocial = function(elt) {
+    if ( typeof elt == 'undefined') {
+        elt = $('#social .stored');
+    }
+    elt.find('.delsocial').click(function(e){
+        e.preventDefault();
+        var _this = $(this);
+        _this.parents('.field.stored').remove();
+    });
+}
+
+$(function(){
+    _rmSocial();
+    _dropdownSocials();
+
+    $('a.addsocial').click(function(e) {
+        e.preventDefault();
+
+        var _newindex = $(this).parents('.addsocial').find('.combo-social:last .socials-dropdown').attr('id').replace('social_new_type_', '');
+        ++_newindex;
+        $(this).parents('.addsocial').find ('.combo-social:last')
+            .clone() // copy
+            .insertAfter('#social .combo-social:last') // where
+            .find('.socials-dropdown').attr('id', 'social_new_type_' + _newindex).dropdown('clear')
+            .find('input:not(.search)').attr('id', 'social_new_type_input_' + _newindex).attr('name', 'social_new_type_' + _newindex)
+            .parent().parent().parent().find('input.value').attr('id', 'social_new_value_' + _newindex).attr('name', 'social_new_value_' + _newindex).val('')
+        ;
+
+        _dropdownSocials();
+    });
+});

@@ -1,0 +1,51 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
+{% extends "components/forms/input.html.twig" %}
+
+{% block component %}
+    <div class="grouped fields">
+        {% block label %}
+            <label>
+            {% if masschange %}
+                {# Add a checkbox for fields to change on mass edition #}
+                {# FIXME: use SUI capacitie to display that well #}
+                <input type="checkbox" name="mass_{{ entry.field_id }}" class="mass_checkbox"/>
+            {% endif %}
+                {{ label }}
+            </label>
+        {% endblock %}
+
+        {% block element %}
+        <div class="field inline">
+            <input type="radio" name="sexe_adh" id="gender_nc" value="{{ constant("Galette\\Entity\\Adherent::NC") }}"{% if not member.isMan() and not member.isWoman() %} checked="checked"{% endif %}{% if disabled is defined and disabled == true %} disabled="disabled"{% endif %}/>
+            <label for="gender_nc">{{ _T("Unspecified") }}</label>
+        </div>
+        <div class="field inline">
+            <input type="radio" name="sexe_adh" id="gender_man" value="{{ constant("Galette\\Entity\\Adherent::MAN") }}"{% if member.isMan() %} checked="checked"{% endif %}{% if disabled is defined and disabled == true %} disabled="disabled"{% endif %}/>
+            <label for="gender_man">{{ _T("Man") }}</label>
+        </div>
+        <div class="field inline">
+            <input type="radio" name="sexe_adh" id="gender_woman" value="{{ constant("Galette\\Entity\\Adherent::WOMAN") }}"{% if member.isWoman() %} checked="checked"{% endif %}{% if disabled is defined and disabled == true %} disabled="disabled"{% endif %}/>
+            <label for="gender_woman">{{ _T("Woman") }}</label>
+        </div>
+        {% endblock %}
+    </div>
+{% endblock %}

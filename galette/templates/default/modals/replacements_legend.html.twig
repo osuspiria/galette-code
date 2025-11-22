@@ -1,0 +1,65 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
+<div id="legende{{ cur_ref }}" class="texts_legend ui large modal" title="{{ _T("Existing variables") }}">
+    <div class="header">{{ _T('Existing variables') }}</div>
+    <div class="scrolling content">
+        <table class="ui very basic table">
+    {% for legend in legends %}
+        <tr>
+            <th colspan="4">
+                {{ legend.title }}
+            </th>
+        </tr>
+        {% for pattern in legend.patterns %}
+            {% if loop.index0 % 2 == 0 %}
+                <tr>
+            {% endif %}
+            <th><tt>{{ pattern.pattern|trim('/') }}</tt></th>
+            <td class="back">
+                {% if pattern.title is defined %}{{ pattern.title }}{% endif %}
+            </td>
+            {% if loop.index0 % 2 != 0 %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+        </table>
+    </div>
+    <div class="actions"><div class="ui labeled icon deny button"><i class="times icon" aria-hidden="true"></i> {{ _T('Close') }}</div></div>
+</div>
+<script type="text/javascript">
+
+    var _addLegendButton = function(selector) {
+        $(selector).append('<i class="btnlegend circular inverted primary link icon info tooltip" aria-hidden="true"></i> <span class="ui special popup">{{ _T("Show existing variables")|e('js') }}</span>');
+    };
+
+    var _handleLegend = function(selector) {
+        if (typeof selector == 'undefined') {
+            selector = '{{ cur_ref }}';
+        }
+        $('#legende' + selector).modal().modal('hide');
+
+        $('.btnlegend').unbind('click').click(function(){
+            $('#legende' + selector).modal('show');
+            return false;
+        });
+    };
+</script>
