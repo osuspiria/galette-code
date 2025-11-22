@@ -313,18 +313,24 @@ class Adherent
     private function generateMemberNumber(): int
     {
         $select = $this->zdb->select(self::TABLE);
-        $select->columns(
-            array('max_number' => new Expression('MAX(num_adh)'))
-        );
-
-        $results = $this->zdb->execute($select);
-        $row = $results->current();
-
-        $max = 0;
-        if ($row && isset($row['max_number']) && $row['max_number'] !== null) {
-            $max = (int)$row['max_number'];
+        $select->columns(['max_number' => new Expression('MAX(num_adh)')]);
+    
+        $result = $this->zdb->execute($select);
+        $row = $result->current();
+    
+        // valores possíveis:
+        // $row['max_number']
+        // $row['MAX(num_adh)']
+        $value = null;
+    
+        if (isset($row['max_number'])) {
+            $value = $row['max_number'];
+        } elseif (isset($row['MAX(num_adh)'])) {
+            $value = $row['MAX(num_adh)'];
         }
-
+    
+        $max = (!empty($value)) ? (int)$value : 0;
+    
         return $max + 1;
     }
 
