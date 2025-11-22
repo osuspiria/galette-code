@@ -308,27 +308,23 @@ class Adherent
     }
 
     /**
-     * Gera o próximo número de sócio (num_adh) FEAT-1. 
-     *
-     * @return int
+     * Generate the next member number (num_adh).
      */
-    private function generateMemberNumber()
+    private function generateMemberNumber(): int
     {
-        // Usamos self::TABLE, como o resto da classe
         $select = $this->zdb->select(self::TABLE);
         $select->columns(
-            array('num_adh')
-        )->order('num_adh DESC')
-         ->limit(1);
-    
+            array('max_number' => new Expression('MAX(num_adh)'))
+        );
+
         $results = $this->zdb->execute($select);
         $row = $results->current();
-    
+
         $max = 0;
-        if ($row && isset($row['num_adh']) && $row['num_adh'] !== null) {
-            $max = (int)$row['num_adh'];
+        if ($row && isset($row['max_number']) && $row['max_number'] !== null) {
+            $max = (int)$row['max_number'];
         }
-    
+
         return $max + 1;
     }
 
@@ -1619,15 +1615,16 @@ class Adherent
             $values = array();
             $fields = self::getDbFields($this->zdb);
 
+            if (empty($this->id)) {
+                // Always generate the member number server-side for new members
+                $this->number = $this->generateMemberNumber();
+            }
+
             foreach ($fields as $field) {
                 if (
                     $field !== 'date_modif_adh'
                     || empty($this->id)
                 ) {
-                    //FEAT-1
-                    if (empty($this->number)) {
-                        $this->number = $this->generateMemberNumber();
-                    }
                     $prop = $this->fields[$field]['propname'];
                     if (
                         ($field === 'bool_admin_adh'
