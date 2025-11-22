@@ -308,6 +308,31 @@ class Adherent
     }
 
     /**
+     * Gera o próximo número de sócio (num_adh) FEAT-1. 
+     *
+     * @return int
+     */
+    private function generateMemberNumber()
+    {
+        // Usamos self::TABLE, como o resto da classe
+        $select = $this->zdb->select(self::TABLE);
+        $select->columns(
+            array('num_adh')
+        )->order('num_adh DESC')
+         ->limit(1);
+    
+        $results = $this->zdb->execute($select);
+        $row = $results->current();
+    
+        $max = 0;
+        if ($row && isset($row['num_adh']) && $row['num_adh'] !== null) {
+            $max = (int)$row['num_adh'];
+        }
+    
+        return $max + 1;
+    }
+
+    /**
      * Loads a member from its login
      *
      * @param string $login login for the member to load
@@ -1599,6 +1624,10 @@ class Adherent
                     $field !== 'date_modif_adh'
                     || empty($this->id)
                 ) {
+                    //FEAT-1
+                    if (empty($this->number)) {
+                        $this->number = $this->generateMemberNumber();
+                    }
                     $prop = $this->fields[$field]['propname'];
                     if (
                         ($field === 'bool_admin_adh'
